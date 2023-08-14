@@ -9,16 +9,21 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavController
+import br.senai.sp.jandira.teeeste.ApiServices
+import br.senai.sp.jandira.teeeste.service.RetrofitFactory
+import androidx.lifecycle.lifecycleScope
+
 
 @Composable
-fun StartScreen(navController: NavController, modifier: Modifier = Modifier) {
+fun StartScreen(navController: NavController, modifier: Modifier = Modifier, onClick: () -> Unit) {
+
     Column (
         modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ){
         Button(onClick = {
-
+            onClick()
         }) {
             Text(text = "GET")
         }
@@ -38,4 +43,8 @@ fun StartScreen(navController: NavController, modifier: Modifier = Modifier) {
             Text(text = "POST")
         }
     }
+
+
+
 }
+
